@@ -1733,8 +1733,8 @@
       <span class="program-number">02</span>
       <div class="program-icon-wrap" style="background: rgba(255,107,107,0.12);">👟</div>
       <h3>Shoe Drives</h3>
-      <p>Termly shoe donation campaigns for public school students. We believe no child should sit in a classroom worrying about their feet.</p>
-      <span class="program-tag">Termly</span>
+      <p>Annual shoe donation campaigns for public school students. We believe no child should sit in a classroom worrying about their feet.</p>
+      <span class="program-tag">Annually</span>
     </div>
     <div class="program-card reveal" style="transition-delay:0.2s">
       <span class="program-number">03</span>
@@ -1767,7 +1767,7 @@
         <p>Every naira and every dollar is a gift passed forward. Donate once, or set up a monthly giving plan and become a founding supporter of everything Sikene will build.</p>
       </div>
       <div class="help-card-bottom">
-        <a href="#" class="help-link">Donate now →</a>
+        <a href="https://paystack.com/pay/sikene-support-foundation" target="_blank" rel="noopener" class="help-link">Donate now →</a>
         <div class="help-accent" style="background: #fff3e0;">💛</div>
       </div>
     </div>
@@ -1778,7 +1778,7 @@
         <p>Show up with your time, your hands, and your heart. Join a shoe drive, help with community feeding, or visit an orphanage. Your presence is the gift.</p>
       </div>
       <div class="help-card-bottom">
-        <a href="#" class="help-link">Join the team →</a>
+        <a href="https://forms.gle/YOUR_GOOGLE_FORM_ID" target="_blank" rel="noopener" class="help-link">Join the team →</a>
         <div class="help-accent" style="background: #e8f5e9;">🌿</div>
       </div>
     </div>
@@ -1789,7 +1789,7 @@
         <p>Share our story. Follow us on social media. Tell one person about Sikene. The widest impact often starts with a single conversation.</p>
       </div>
       <div class="help-card-bottom">
-        <a href="#" class="help-link">Follow us →</a>
+        <a href="#contact-details" class="help-link">Follow us →</a>
         <div class="help-accent" style="background: #fce4ec;">❤️</div>
       </div>
     </div>
@@ -1841,8 +1841,12 @@
     <div class="media-filter">
       <button class="filter-btn active" onclick="filterMedia('all', this)">All</button>
       <button class="filter-btn" onclick="filterMedia('orphan', this)">Orphan Care</button>
+      <!-- Shoe Drives filter — uncomment when shoe drive events occur
       <button class="filter-btn" onclick="filterMedia('shoes', this)">Shoe Drives</button>
+      -->
+      <!-- Community Feeding filter — uncomment when feeding events occur
       <button class="filter-btn" onclick="filterMedia('food', this)">Community Feeding</button>
+      -->
     </div>
   </div>
 
@@ -1858,6 +1862,7 @@
         <span class="mo-title">Orphanage Visit — Lagos Island</span>
       </div>
     </div>
+    <!-- Shoe Drive — Surulere Primary: uncomment when shoe drive events occur
     <div class="media-item" data-cat="shoes" data-title="Shoe Drive — Surulere Primary" onclick="openLightbox('Shoe Drive — Surulere Primary', 'photo')">
       <div class="media-placeholder" style="background: linear-gradient(135deg, #2a1a10, #6b3a2e);">
         <div class="ph-icon">👟</div>
@@ -1869,6 +1874,8 @@
         <span class="mo-title">Shoe Drive — Surulere Primary</span>
       </div>
     </div>
+    -->
+    <!-- Community Feeding — Mushin: uncomment when feeding events occur
     <div class="media-item" data-cat="food" data-title="Community Feeding — Mushin" onclick="openLightbox('Community Feeding — Mushin', 'video')">
       <div class="video-badge">▶ Video</div>
       <div class="media-placeholder" style="background: linear-gradient(135deg, #101a2a, #2e4a6b);">
@@ -1881,6 +1888,8 @@
         <span class="mo-title">Community Feeding — Mushin</span>
       </div>
     </div>
+    -->
+    <!-- 100 Pairs Campaign — Agege: uncomment when shoe drive events occur
     <div class="media-item" data-cat="shoes" data-title="100 Pairs Campaign — Agege" onclick="openLightbox('100 Pairs Campaign — Agege', 'photo')">
       <div class="media-placeholder" style="background: linear-gradient(135deg, #1a2a10, #3a6b2e);">
         <div class="ph-icon">👟</div>
@@ -1892,6 +1901,7 @@
         <span class="mo-title">100 Pairs Campaign — Agege</span>
       </div>
     </div>
+    -->
     <div class="media-item" data-cat="orphan" data-title="Holiday Visit — Yaba Children's Home" onclick="openLightbox('Holiday Visit — Yaba Children\'s Home', 'video')">
       <div class="video-badge">▶ Video</div>
       <div class="media-placeholder" style="background: linear-gradient(135deg, #1a1a2a, #3a2e6b);">
@@ -1904,6 +1914,7 @@
         <span class="mo-title">Holiday Visit — Yaba Children's Home</span>
       </div>
     </div>
+    <!-- Ramadan Feeding Drive: uncomment when feeding events occur
     <div class="media-item" data-cat="food" data-title="Ramadan Feeding Drive" onclick="openLightbox('Ramadan Feeding Drive', 'photo')">
       <div class="media-placeholder" style="background: linear-gradient(135deg, #2a1a1a, #6b2e2e);">
         <div class="ph-icon">🍱</div>
@@ -1915,6 +1926,7 @@
         <span class="mo-title">Ramadan Feeding Drive</span>
       </div>
     </div>
+    -->
   </div>
 </section>
 
@@ -1975,40 +1987,59 @@
 
     <div class="partner-form reveal">
       <h3>Express interest</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Organisation name</label>
-          <input type="text" placeholder="Acme Ltd">
+      <!-- FORMSPREE SETUP:
+           1. Go to formspree.io and create a free account
+           2. Create a new form — copy your form endpoint (looks like https://formspree.io/f/xxxxxxxx)
+           3. Replace YOUR_FORMSPREE_ID below with that endpoint
+           4. Formspree will email all submissions to your registered address — no backend needed -->
+      <form id="partnerForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handlePartnerSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Organisation name *</label>
+            <input type="text" name="organisation_name" placeholder="Acme Ltd" required>
+          </div>
+          <div class="form-group">
+            <label>Contact person *</label>
+            <input type="text" name="contact_person" placeholder="Your full name" required>
+          </div>
         </div>
         <div class="form-group">
-          <label>Contact person</label>
-          <input type="text" placeholder="Your name">
+          <label>Email address *</label>
+          <input type="email" name="email" placeholder="hello@yourcompany.com" required>
         </div>
+        <div class="form-group">
+          <label>Phone number *</label>
+          <input type="tel" name="phone" placeholder="+234 800 000 0000" required>
+        </div>
+        <div class="form-group">
+          <label>Industry / sector</label>
+          <input type="text" name="industry" placeholder="e.g. Financial services, FMCG, Tech">
+        </div>
+        <div class="form-group">
+          <label>Partnership type *</label>
+          <select name="partnership_type" required>
+            <option value="">Select a partnership type</option>
+            <option value="Gold Partner">Gold Partner — Lead program sponsor</option>
+            <option value="Silver Partner">Silver Partner — Co-sponsor a single event</option>
+            <option value="In-Kind Partner">In-Kind Partner — Donate goods or services</option>
+            <option value="Community Partner">Community Partner — Schools, churches, groups</option>
+            <option value="Other">Other — Tell us in your message</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>How would you like to contribute?</label>
+          <textarea name="message" placeholder="Tell us about your organisation and how you'd like to partner with Sikene Support Foundation…"></textarea>
+        </div>
+        <!-- Hidden field so you know which form it came from -->
+        <input type="hidden" name="_subject" value="New Partnership Enquiry — Sikene Support Foundation">
+        <input type="hidden" name="_replyto" value="">
+        <button type="submit" class="btn-gold" id="partnerSubmitBtn">Send Partnership Enquiry</button>
+      </form>
+      <div id="partnerSuccess" style="display:none; text-align:center; padding:32px 0;">
+        <div style="font-size:36px; margin-bottom:12px;">✓</div>
+        <p style="font-size:16px; color:var(--gold); font-family:'Cormorant Garamond',serif; font-weight:600; margin-bottom:8px;">Thank you for reaching out!</p>
+        <p style="font-size:13px; color:rgba(255,255,255,0.55); font-weight:300; line-height:1.7;">We've received your partnership enquiry and will be in touch within 3–5 business days.</p>
       </div>
-      <div class="form-group">
-        <label>Email address</label>
-        <input type="email" placeholder="hello@yourcompany.com">
-      </div>
-      <div class="form-group">
-        <label>Phone number</label>
-        <input type="tel" placeholder="+234 903 993 2988">
-      </div>
-      <div class="form-group">
-        <label>Partnership type</label>
-        <select>
-          <option value="">Select a partnership type</option>
-          <option>Gold Partner</option>
-          <option>Silver Partner</option>
-          <option>In-Kind Partner</option>
-          <option>Community Partner</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Message (optional)</label>
-        <textarea placeholder="Tell us how you'd like to partner with us…"></textarea>
-      </div>
-      <button class="btn-gold">Send Partnership Enquiry</button>
     </div>
   </div>
 </section>
@@ -2027,7 +2058,7 @@
     <button class="period-tab active" onclick="showPeriod('q1', this)">Q1 2026</button>
     <button class="period-tab" onclick="showPeriod('q2', this)">Q2 2026</button>
     <button class="period-tab" onclick="showPeriod('q3', this)">Q3 2026</button>
-    <button class="period-tab" onclick="showPeriod('annual', this)">Full Year 2026</button>
+    <button class="period-tab" onclick="showPeriod('q4', this)">Q4 2026</button>
   </div>
 
   <div class="fin-table-wrap reveal" oncontextmenu="return false;">
@@ -2067,8 +2098,8 @@
       <p class="contact-role">Founder & Executive Director</p>
       <p class="contact-name">Adetola Adesote</p>
       <div class="contact-detail">
-        <a href="mailto:founder@sikenesupport.org" class="contact-item">
-          <span class="contact-icon">✉</span> founder@sikenesupport.org
+        <a href="/cdn-cgi/l/email-protection#dcbab3a9b2b8b9ae9cafb5b7b9b2b9afa9acacb3aea8f2b3aebb" class="contact-item">
+          <span class="contact-icon">✉</span> <span class="__cf_email__" data-cfemail="c9afa6bca7adacbb89baa0a2aca7acbabcb9b9a6bbbde7a6bbae">[email&#160;protected]</span>
         </a>
         <a href="tel:+2348000000000" class="contact-item">
           <span class="contact-icon">☎</span> +234 903 993 2988
@@ -2079,8 +2110,8 @@
       <p class="contact-role">Programs Coordinator</p>
       <p class="contact-name">[Coordinator Name]</p>
       <div class="contact-detail">
-        <a href="mailto:programs@sikenesupport.org" class="contact-item">
-          <span class="contact-icon">✉</span> programs@sikenesupport.org
+        <a href="/cdn-cgi/l/email-protection#eb9b99848c998a8698ab9882808e858e989e9b9b84999fc584998c" class="contact-item">
+          <span class="contact-icon">✉</span> <span class="__cf_email__" data-cfemail="aededcc1c9dccfc3ddeeddc7c5cbc0cbdddbdedec1dcda80c1dcc9">[email&#160;protected]</span>
         </a>
         <a href="tel:+2348000000001" class="contact-item">
           <span class="contact-icon">☎</span> +234 800 000 0001
@@ -2091,8 +2122,8 @@
       <p class="contact-role">Partnerships & Donations</p>
       <p class="contact-name">[Partner Lead Name]</p>
       <div class="contact-detail">
-        <a href="mailto:partners@sikenesupport.org" class="contact-item">
-          <span class="contact-icon">✉</span> partners@sikenesupport.org
+        <a href="/cdn-cgi/l/email-protection#35455447415b50474675465c5e505b50464045455a47411b5a4752" class="contact-item">
+          <span class="contact-icon">✉</span> <span class="__cf_email__" data-cfemail="f2829380869c978081b2819b99979c97818782829d8086dc9d8095">[email&#160;protected]</span>
         </a>
         <a href="tel:+2348000000002" class="contact-item">
           <span class="contact-icon">☎</span> +234 800 000 0002
@@ -2105,7 +2136,7 @@
     <span class="addr-icon">📍</span>
     <p>
       <strong>Sikene Support Foundation</strong>
-      Lagos, Nigeria · [Update with your registered address once CAC registration is complete]
+      Lagos, Nigeria ·  
     </p>
   </div>
 </section>
@@ -2149,9 +2180,9 @@
     <div class="footer-col">
       <h4>Connect</h4>
       <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">WhatsApp Channel</a></li>
+        <li><a href="https://www.instagram.com/sikenesupportfoundation?igsh=MWV4eDJnYWU1eG1jdA==" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://whatsapp.com/channel" target="_blank" rel="noopener">WhatsApp Channel</a></li>
         <li><a href="#contact-details">Contact Us</a></li>
       </ul>
     </div>
@@ -2159,15 +2190,23 @@
   <div class="footer-bottom">
     <p>© 2026 Sikene Support Foundation. Lagos, Nigeria. All rights reserved.</p>
     <div class="footer-socials">
-      <a href="#" class="social-link">📸</a>
-      <a href="#" class="social-link">📘</a>
-      <a href="#" class="social-link">💬</a>
-      <a href="#" class="social-link">🐦</a>
+      <a href="https://www.instagram.com/sikenesupportfoundation?igsh=MWV4eDJnYWU1eG1jdA==" target="_blank" rel="noopener" class="social-link" title="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://x.com/sikenesuppfndn?s=20" target="_blank" rel="noopener" class="social-link" title="X (Twitter)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://wa.me/message/sikene" target="_blank" rel="noopener" class="social-link" title="WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/sikene-support-foundation/about/?viewAsMember=true" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // NAV SCROLL
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -2214,76 +2253,76 @@
       label: 'Sikene Support Foundation — Financial Statement, Q1 2026',
       rows: [
         { type: 'section', label: 'Income' },
-        { label: 'Individual donations', budget: 150000, actual: 187500 },
+        { label: 'Individual donations', budget: 150000, actual: 245000 },
         { label: 'Corporate sponsorships', budget: 0, actual: 0 },
         { label: 'Fundraising events', budget: 100000, actual: 0 },
         { label: 'Grants received', budget: 0, actual: 0 },
-        { type: 'total', label: 'Total Income', budget: 250000, actual: 187500 },
+        { type: 'total', label: 'Total Income', budget: 250000, actual: 245000 },
         { type: 'section', label: 'Expenditure' },
-        { label: 'Orphan Care (supplies & visits)', budget: 80000, actual: 62000 },
+        { label: 'Orphan Care (supplies & visits)', budget: 80000, actual: 0 },
         { label: 'Shoe Drive (purchase & logistics)', budget: 90000, actual: 0 },
-        { label: 'Community Feeding', budget: 50000, actual: 44500 },
-        { label: 'Administrative costs', budget: 20000, actual: 18200 },
-        { label: 'Communications & marketing', budget: 10000, actual: 8400 },
-        { type: 'total', label: 'Total Expenditure', budget: 250000, actual: 133100 },
-        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: 54400 },
+        { label: 'Community Feeding', budget: 50000, actual: 0 },
+        { label: 'Administrative costs', budget: 20000, actual: 0 },
+        { label: 'Communications & marketing', budget: 10000, actual: 0 },
+        { type: 'total', label: 'Total Expenditure', budget: 250000, actual: 0 },
+        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: 0 },
       ]
     },
     q2: {
       label: 'Sikene Support Foundation — Financial Statement, Q2 2026',
       rows: [
         { type: 'section', label: 'Income' },
-        { label: 'Individual donations', budget: 200000, actual: 0 },
-        { label: 'Corporate sponsorships', budget: 100000, actual: 0 },
-        { label: 'Fundraising events', budget: 150000, actual: 0 },
+        { label: 'Individual donations', budget: 0, actual: 0 },
+        { label: 'Corporate sponsorships', budget: 0, actual: 0 },
+        { label: 'Fundraising events', budget: 0, actual: 0 },
         { label: 'Grants received', budget: 0, actual: 0 },
-        { type: 'total', label: 'Total Income', budget: 450000, actual: 0 },
+        { type: 'total', label: 'Total Income', budget: 0, actual: 0 },
         { type: 'section', label: 'Expenditure' },
-        { label: 'Orphan Care (supplies & visits)', budget: 100000, actual: 0 },
-        { label: 'Shoe Drive (purchase & logistics)', budget: 200000, actual: 0 },
-        { label: 'Community Feeding', budget: 80000, actual: 0 },
-        { label: 'Administrative costs', budget: 30000, actual: 0 },
-        { label: 'Communications & marketing', budget: 20000, actual: 0 },
-        { type: 'total', label: 'Total Expenditure', budget: 430000, actual: 0 },
-        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 20000, actual: 0 },
+        { label: 'Orphan Care (supplies & visits)', budget: 0, actual: 0 },
+        { label: 'Shoe Drive (purchase & logistics)', budget: 0, actual: 0 },
+        { label: 'Community Feeding', budget: 0, actual: 0 },
+        { label: 'Administrative costs', budget: 0, actual: 0 },
+        { label: 'Communications & marketing', budget: 0, actual: 0 },
+        { type: 'total', label: 'Total Expenditure', budget: 0, actual: 0 },
+        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: 0 },
       ]
     },
     q3: {
       label: 'Sikene Support Foundation — Financial Statement, Q3 2026',
       rows: [
         { type: 'section', label: 'Income' },
-        { label: 'Individual donations', budget: 250000, actual: 0 },
-        { label: 'Corporate sponsorships', budget: 150000, actual: 0 },
-        { label: 'Fundraising events', budget: 200000, actual: 0 },
+        { label: 'Individual donations', budget: 0, actual: 0 },
+        { label: 'Corporate sponsorships', budget: 0, actual: 0 },
+        { label: 'Fundraising events', budget: 0, actual: 0 },
         { label: 'Grants received', budget: 0, actual: 0 },
-        { type: 'total', label: 'Total Income', budget: 600000, actual: 0 },
+        { type: 'total', label: 'Total Income', budget: 0, actual: 0 },
         { type: 'section', label: 'Expenditure' },
-        { label: 'Orphan Care (supplies & visits)', budget: 120000, actual: 0 },
-        { label: 'Shoe Drive (purchase & logistics)', budget: 220000, actual: 0 },
-        { label: 'Community Feeding', budget: 100000, actual: 0 },
-        { label: 'Administrative costs', budget: 35000, actual: 0 },
-        { label: 'Communications & marketing', budget: 25000, actual: 0 },
-        { type: 'total', label: 'Total Expenditure', budget: 500000, actual: 0 },
-        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 100000, actual: 0 },
+        { label: 'Orphan Care (supplies & visits)', budget: 0, actual: 0 },
+        { label: 'Shoe Drive (purchase & logistics)', budget: 0, actual: 0 },
+        { label: 'Community Feeding', budget: 0, actual: 0 },
+        { label: 'Administrative costs', budget: 0, actual: 0 },
+        { label: 'Communications & marketing', budget: 0, actual: 0 },
+        { type: 'total', label: 'Total Expenditure', budget: 0, actual: 0 },
+        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: 0 },
       ]
     },
-    annual: {
-      label: 'Sikene Support Foundation — Annual Financial Statement 2026',
+    q4: {
+      label: 'Sikene Support Foundation — Financial Statement, Q4 2026',
       rows: [
-        { type: 'section', label: 'Full Year Income' },
-        { label: 'Individual donations', budget: 800000, actual: 187500 },
-        { label: 'Corporate sponsorships', budget: 350000, actual: 0 },
-        { label: 'Fundraising events', budget: 450000, actual: 0 },
+        { type: 'section', label: 'Income' },
+        { label: 'Individual donations', budget: 0, actual: 0 },
+        { label: 'Corporate sponsorships', budget: 0, actual: 0 },
+        { label: 'Fundraising events', budget: 0, actual: 0 },
         { label: 'Grants received', budget: 0, actual: 0 },
-        { type: 'total', label: 'Total Income', budget: 1600000, actual: 187500 },
-        { type: 'section', label: 'Full Year Expenditure' },
-        { label: 'Orphan Care (supplies & visits)', budget: 400000, actual: 62000 },
-        { label: 'Shoe Drive (purchase & logistics)', budget: 510000, actual: 0 },
-        { label: 'Community Feeding', budget: 330000, actual: 44500 },
-        { label: 'Administrative costs', budget: 105000, actual: 18200 },
-        { label: 'Communications & marketing', budget: 55000, actual: 8400 },
-        { type: 'total', label: 'Total Expenditure', budget: 1400000, actual: 133100 },
-        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 200000, actual: 54400 },
+        { type: 'total', label: 'Total Income', budget: 0, actual: 0 },
+        { type: 'section', label: 'Expenditure' },
+        { label: 'Orphan Care (supplies & visits)', budget: 0, actual: 0 },
+        { label: 'Shoe Drive (purchase & logistics)', budget: 0, actual: 0 },
+        { label: 'Community Feeding', budget: 0, actual: 0 },
+        { label: 'Administrative costs', budget: 0, actual: 0 },
+        { label: 'Communications & marketing', budget: 0, actual: 0 },
+        { type: 'total', label: 'Total Expenditure', budget: 0, actual: 0 },
+        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: 0 },
       ]
     }
   };
@@ -2294,7 +2333,7 @@
   }
 
   function variance(budget, actual) {
-    if (actual === 0) return '<span style="color:var(--text-light)">Pending</span>';
+    if (actual === 0) return '—';
     const v = actual - budget;
     const cls = v >= 0 ? 'amount-positive' : 'amount-negative';
     const sign = v >= 0 ? '+' : '';
@@ -2317,7 +2356,7 @@
       if (row.type === 'surplus') {
         const v = row.actual;
         const cls = v >= 0 ? 'amount-positive' : 'amount-negative';
-        return '<tr class="surplus"><td>' + row.label + '</td><td style="text-align:right">—</td><td style="text-align:right"><span class="' + cls + '">' + (v === 0 ? '—' : fmt(v)) + '</span></td><td style="text-align:right">—</td></tr>';
+        return '<tr class="surplus"><td>' + row.label + '</td><td style="text-align:right">—</td><td style="text-align:right"><span class="' + cls + '">' + (v === 0 ? '—' : v.toLocaleString('en-NG')) + '</span></td><td style="text-align:right">—</td></tr>';
       }
       return '<tr><td>' + row.label + '</td><td style="text-align:right">' + fmt(row.budget) + '</td><td style="text-align:right">' + fmt(row.actual) + '</td><td style="text-align:right">' + variance(row.budget, row.actual) + '</td></tr>';
     }).join('');
@@ -2325,6 +2364,31 @@
 
   // Load default period
   showPeriod('q1', document.querySelector('.period-tab'));
+
+  // PARTNER FORM — FORMSPREE SUBMISSION
+  async function handlePartnerSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('partnerSubmitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(e.target.action, {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('partnerForm').style.display = 'none';
+        document.getElementById('partnerSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Failed — please try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Failed — please try again';
+      btn.disabled = false;
+    }
+  }
 </script>
 </body>
 </html>
