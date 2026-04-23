@@ -910,7 +910,22 @@
     opacity: 1;
     transform: translateY(0);
   }
+/* --- BRAND COLORS --- */
+.footer-socials a[title="Instagram"] { color: #E4405F !important; }
+.footer-socials a[title="X (Twitter)"] { color: #FFFFFF !important; }
+.footer-socials a[title="WhatsApp"] { color: #25D366 !important; }
+.footer-socials a[title="Facebook"] { color: #1877F2 !important; }
+.footer-socials a[title="LinkedIn"] { color: #0A66C2 !important; }
 
+/* --- FIX FOR INSTAGRAM OUTLINE --- */
+.footer-socials a[title="Instagram"] svg {
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+.footer-socials a svg {
+  fill: currentColor;
+}
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     nav { padding: 20px 32px; }
