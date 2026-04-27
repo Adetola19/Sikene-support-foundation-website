@@ -1786,7 +1786,7 @@
         <p>Every naira and every dollar is a gift passed forward. Donate once, or set up a monthly giving plan and become a founding supporter of everything Sikene will build.</p>
       </div>
       <div class="help-card-bottom">
-        <a href="https://paystack.com/pay/sikene-support-foundation" target="_blank" rel="noopener" class="help-link">Donate now →</a>
+        <a href="#" onclick="document.getElementById('donateModal').style.display='flex'; return false;" class="help-link">Donate now →</a>
         <div class="help-accent" style="background: #fff3e0;">💛</div>
       </div>
     </div>
@@ -1948,6 +1948,69 @@
     -->
   </div>
 </section>
+<!-- DONATE MODAL -->
+<div id="donateModal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#0f2419;border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;position:relative;">
+    <button onclick="document.getElementById('donateModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.1);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;">✕</button>
+
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#fff;margin-bottom:6px;">Give a Gift</h3>
+    <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:28px;font-weight:300;">Transfer directly to any of our foundation accounts below. Every contribution counts.</p>
+
+    <!-- NGN -->
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px 22px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#FFD166;font-weight:500;">Naira — NGN ₦</span>
+      </div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Bank</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;margin-bottom:12px;">United Bank of Africa - UBA</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Account Number</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;margin-bottom:12px;">1030075394</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Account Name</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;">SIKENE SUPPORT FOUNDATION</p>
+    </div>
+
+    <!-- GBP -->
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px 22px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#FFD166;font-weight:500;">Pounds — GBP £</span>
+      </div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Bank</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;margin-bottom:12px;">United Bank of Africa - UBA</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Account Number</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;margin-bottom:12px;">3005126658</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Account Name</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;">SIKENE SUPPORT FOUNDATION</p>
+    </div>
+
+    <!-- USD -->
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px 22px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#FFD166;font-weight:500;">Dollar — USD $</span>
+      </div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Bank</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;margin-bottom:12px;">United Bank of Africa - UBA</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Account Number</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;margin-bottom:12px;">3005124537</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Account Name</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;">SIKENE SUPPORT FOUNDATION</p>
+    </div>
+
+    <!-- EUR -->
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px 22px;margin-bottom:24px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#FFD166;font-weight:500;">Euro — EUR €</span>
+      </div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Bank</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;margin-bottom:12px;">United Bank of Africa - UBA</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Account Number</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;margin-bottom:12px;">3005126713</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:4px;font-weight:300;">Account Name</p>
+      <p style="font-size:15px;color:#fff;font-weight:500;">SIKENE SUPPORT FOUNDATION</p>
+    </div>
+
+    <p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;line-height:1.7;">After transferring, kindly send your name and amount to our WhatsApp or email so we can acknowledge your gift. Thank you. 🙏🏾</p>
+  </div>
+</div>
 <!-- VOLUNTEER MODAL -->
 <div id="volunteerModal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:24px;">
   <div style="background:#0f2419;border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;position:relative;">
