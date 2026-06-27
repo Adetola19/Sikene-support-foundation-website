@@ -1869,18 +1869,75 @@
     </div>
   </div>
 
-  <div class="media-grid" id="mediaGrid">
-    <div class="media-item tall" data-cat="orphan" data-title="Orphanage Visit — Hope at Last Orphanage" onclick="openLightbox('Orphanage Visit — Hope at Last Orphanage', 'photo')">
-      <div class="media-placeholder" style="background: linear-gradient(135deg, #1a3a2a, #2e6b47);">
-        <div class="ph-icon">🏠</div>
-        <p class="ph-label">Orphanage Visit</p>
-        <p class="ph-sub">Upload your outreach photo here</p>
-      </div>
-      <div class="media-overlay">
-        <span class="mo-tag">Orphan Care</span>
-        <span class="mo-title">Orphanage Visit — Hope at Last Orphanage</span>
-      </div>
+  <div class="media-grid" id="mediaGrid" style="grid-template-columns:repeat(2,1fr);">
+
+  <!-- Orphanage Visit Photos -->
+  <div class="media-item" data-cat="orphan" onclick="openScrollGallery()" style="aspect-ratio:4/3;">
+    <img src="assets/media/orphanage-01.jpg" alt="Orphanage Visit" style="width:100%;height:100%;object-fit:cover;">
+    <div class="media-overlay">
+      <span class="mo-tag">Orphanage Visit</span>
+      <span class="mo-title">Hope at Last Orphanage — Photos</span>
     </div>
+  </div>
+
+  <!-- Orphanage Visit Videos -->
+  <div class="media-item" data-cat="orphan" onclick="openVideoGallery()" style="aspect-ratio:4/3;cursor:pointer;">
+  <img src="assets/media/orphanage-01.jpg" alt="Orphanage Videos" style="width:100%;height:100%;object-fit:cover;">
+  <div class="video-badge">▶ Video</div>
+  <div class="media-overlay">
+    <span class="mo-tag">Orphanage Visit</span>
+    <span class="mo-title">Hope at Last Orphanage — Videos</span>
+  </div>
+</div>
+
+
+<div id="videoGalleryModal" onclick="if(event.target===this)closeVideoGallery()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;">
+  <button onclick="closeVideoGallery()" style="position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.1);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:20px;z-index:1002;">✕</button>
+
+  <!-- Counter -->
+  <div id="vgCounter" style="position:fixed;top:22px;left:50%;transform:translateX(-50%);color:#FFD166;font-size:13px;letter-spacing:2px;font-family:'DM Sans',sans-serif;z-index:1002;"></div>
+
+  <!-- Prev -->
+  <button onclick="vgStep(-1)" style="position:fixed;left:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:22px;z-index:1002;">‹</button>
+
+  <!-- Video -->
+  <div style="width:90%;max-width:860px;text-align:center;">
+    <p style="color:#FFD166;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;font-family:'DM Sans',sans-serif;">Orphanage Visit — Hope at Last Orphanage Home</p>
+    <video id="vgVideo" controls style="max-width:100%;max-height:75vh;border-radius:10px;background:#000;"></video>
+  </div>
+
+  <!-- Next -->
+  <button onclick="vgStep(1)" style="position:fixed;right:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:22px;z-index:1002;">›</button>
+</div>
+
+  <!-- Shoe Drive Upcoming Photos -->
+  <div class="media-item" data-cat="shoes" style="aspect-ratio:4/3;">
+    <div class="media-placeholder" style="background:linear-gradient(135deg,#2a1a10,#6b3a2e);width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+      <div class="ph-icon">👟</div>
+      <p class="ph-label">Shoe Drive — Upcoming</p>
+      <p class="ph-sub">Photos will appear here after the event</p>
+    </div>
+    <div class="media-overlay">
+      <span class="mo-tag">Shoe Drive</span>
+      <span class="mo-title">Shoe Drive — Upcoming</span>
+    </div>
+  </div>
+
+  <!-- Shoe Drive Upcoming Videos -->
+  <div class="media-item" data-cat="shoes" style="aspect-ratio:4/3;">
+    <div class="media-placeholder" style="background:linear-gradient(135deg,#1a2a10,#3a6b2e);width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+      <div class="ph-icon">🎥</div>
+      <p class="ph-label">Shoe Drive — Upcoming</p>
+      <p class="ph-sub">Videos will appear here after the event</p>
+    </div>
+    <div class="video-badge">▶ Video</div>
+    <div class="media-overlay">
+      <span class="mo-tag">Shoe Drive</span>
+      <span class="mo-title">Shoe Drive — Upcoming</span>
+    </div>
+  </div>
+
+</div>
     <!-- Shoe Drive — Surulere Primary: uncomment when shoe drive events occur
     <div class="media-item" data-cat="shoes" data-title="Shoe Drive — Surulere Primary" onclick="openLightbox('Shoe Drive — Surulere Primary', 'photo')">
       <div class="media-placeholder" style="background: linear-gradient(135deg, #2a1a10, #6b3a2e);">
@@ -1921,7 +1978,7 @@
       </div>
     </div>
     -->
-    <div class="media-item" data-cat="orphan" data-title="Holiday Visit — Yaba Children's Home" onclick="openLightbox('Holiday Visit — Yaba Children\'s Home', 'video')">
+    <!-- <div class="media-item" data-cat="orphan" data-title="Shoe Drive — Upcoming" onclick="openLightbox('Shoe Drive — Upcoming\'s Home', 'video')">
       <div class="video-badge">▶ Video</div>
       <div class="media-placeholder" style="background: linear-gradient(135deg, #1a1a2a, #3a2e6b);">
         <div class="ph-icon">🏠</div>
@@ -1932,7 +1989,7 @@
         <span class="mo-tag">Orphan Care</span>
         <span class="mo-title">Holiday Visit — Yaba Children's Home</span>
       </div>
-    </div>
+    </div> -->
     <!-- Ramadan Feeding Drive: uncomment when feeding events occur
     <div class="media-item" data-cat="food" data-title="Ramadan Feeding Drive" onclick="openLightbox('Ramadan Feeding Drive', 'photo')">
       <div class="media-placeholder" style="background: linear-gradient(135deg, #2a1a1a, #6b2e2e);">
@@ -2109,16 +2166,24 @@
 </div>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <div class="lightbox-inner">
-    <div class="lightbox-media" id="lightboxMedia">
-      <span>Your media will display here</span>
-    </div>
-    <div class="lightbox-info">
-      <span class="lightbox-title" id="lightboxTitle"></span>
-      <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('open')">✕</button>
-    </div>
+<!-- SCROLL GALLERY MODAL -->
+<div id="scrollGalleryModal" onclick="if(event.target===this)closeScrollGallery()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;">
+  <button onclick="closeScrollGallery()" style="position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.1);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:20px;z-index:1002;">✕</button>
+
+  <!-- Counter -->
+  <div id="sgCounter" style="position:fixed;top:22px;left:50%;transform:translateX(-50%);color:#FFD166;font-size:13px;letter-spacing:2px;font-family:'DM Sans',sans-serif;z-index:1002;"></div>
+
+  <!-- Prev -->
+  <button onclick="sgStep(-1)" style="position:fixed;left:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:22px;z-index:1002;">‹</button>
+
+  <!-- Image -->
+  <div style="width:90%;max-width:860px;text-align:center;">
+    <p style="color:#FFD166;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;font-family:'DM Sans',sans-serif;">Orphanage Visit — Hope at Last Orphanage Home</p>
+    <img id="sgImage" src="" style="max-width:100%;max-height:75vh;object-fit:contain;border-radius:10px;">
   </div>
+
+  <!-- Next -->
+  <button onclick="sgStep(1)" style="position:fixed;right:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:22px;z-index:1002;">›</button>
 </div>
 
 <!-- BECOME A PARTNER -->
@@ -2437,6 +2502,130 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
 
+const vgVideos = [
+  { src: 'assets/media/orphanage-video-01.mp4', poster: 'assets/media/orphanage-01.jpg' },
+  // { src: 'assets/media/orphanage-video-02.mp4', poster: 'assets/media/orphanage-02.jpg' },
+  // { src: 'assets/media/orphanage-video-03.mp4', poster: 'assets/media/orphanage-03.jpg' },
+];
+let vgIndex = 0;
+
+function openVideoGallery(startIndex = 0) {
+  vgIndex = startIndex;
+  vgShow();
+  document.getElementById('videoGalleryModal').style.display = 'flex';
+}
+
+function closeVideoGallery() {
+  const video = document.getElementById('vgVideo');
+  video.pause();
+  video.src = '';
+  document.getElementById('videoGalleryModal').style.display = 'none';
+}
+
+function vgStep(dir) {
+  const video = document.getElementById('vgVideo');
+  video.pause();
+  vgIndex = (vgIndex + dir + vgVideos.length) % vgVideos.length;
+  vgShow();
+}
+
+function vgShow() {
+  const video = document.getElementById('vgVideo');
+  const current = vgVideos[vgIndex];
+  video.src = current.src;
+  video.poster = current.poster;
+  video.load();
+  document.getElementById('vgCounter').textContent = `${vgIndex + 1} / ${vgVideos.length}`;
+}
+
+  function openScrollGallery(startIndex = 0) {
+  sgIndex = startIndex;
+  sgShow();
+  const modal = document.getElementById('scrollGalleryModal');
+  modal.style.display = 'flex';
+}
+
+function closeScrollGallery() {
+  document.getElementById('scrollGalleryModal').style.display = 'none';
+}
+
+function sgStep(dir) {
+  sgIndex = (sgIndex + dir + sgImages.length) % sgImages.length;
+  sgShow();
+}
+
+function sgShow() {
+  document.getElementById('sgImage').src = sgImages[sgIndex];
+  document.getElementById('sgCounter').textContent = `${sgIndex + 1} / ${sgImages.length}`;
+}
+
+const galleryImages = [
+  { src: 'assets/media/orphanage-01.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-02.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-03.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-04.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-05.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-06.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-07.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-08.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-09.jpg', caption: 'Orphanage Visit' },
+  { src: 'assets/media/orphanage-10.jpg', caption: 'Orphanage Visit' },
+];
+
+const sgImages = [
+  'assets/media/orphanage-01.jpg',
+  'assets/media/orphanage-02.jpg',
+  'assets/media/orphanage-03.jpg',
+  'assets/media/orphanage-04.jpg',
+  'assets/media/orphanage-05.jpg',
+  'assets/media/orphanage-06.jpg',
+  'assets/media/orphanage-07.jpg',
+  'assets/media/orphanage-08.jpg',
+  'assets/media/orphanage-09.jpg',
+  'assets/media/orphanage-10.jpg',
+];
+let sgIndex = 0;
+let currentGalleryIndex = 0;
+
+function openGallery(index) {
+  currentGalleryIndex = index;
+  document.getElementById('galleryModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  renderGallery();
+}
+
+function closeGallery() {
+  document.getElementById('galleryModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function shiftGallery(dir) {
+  currentGalleryIndex = (currentGalleryIndex + dir + galleryImages.length) % galleryImages.length;
+  renderGallery();
+}
+
+function renderGallery() {
+  const item = galleryImages[currentGalleryIndex];
+  document.getElementById('galleryImg').src = item.src;
+  document.getElementById('galleryImg').alt = item.caption;
+  document.getElementById('galleryCaption').textContent = item.caption;
+  document.getElementById('galleryCounter').textContent = (currentGalleryIndex + 1) + ' / ' + galleryImages.length;
+  const dots = document.getElementById('galleryDots');
+  dots.innerHTML = galleryImages.map((_, i) =>
+    `<div onclick="closeScrollGallery(); openGallery(${i})" style="width:8px;height:8px;border-radius:50%;background:${i === currentGalleryIndex ? '#FFD166' : 'rgba(255,255,255,0.3)'};cursor:pointer;transition:background 0.2s;"></div>`
+  ).join('');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (document.getElementById('galleryModal').style.display === 'flex') {
+    if (e.key === 'ArrowRight') shiftGallery(1);
+    if (e.key === 'ArrowLeft') shiftGallery(-1);
+    if (e.key === 'Escape') closeGallery();
+  }
+  if (document.getElementById('scrollGalleryModal').style.display === 'flex') {
+    if (e.key === 'Escape') closeScrollGallery();
+  }
+});
   // MEDIA FILTER
   function filterMedia(cat, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
