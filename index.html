@@ -1930,7 +1930,7 @@
 
   <!-- Video -->
   <div style="width:90%;max-width:860px;text-align:center;">
-    <p style="color:#FFD166;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;font-family:'DM Sans',sans-serif;">Orphanage Visit — Hope at Last Orphanage Home</p>
+    <p id="vgLabel" style="color:#FFD166;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;font-family:'DM Sans',sans-serif;">Orphanage Visit — Hope at Last Orphanage Home</p>
     <video id="vgVideo" controls style="max-width:100%;max-height:75vh;border-radius:10px;background:#000;"></video>
   </div>
 
@@ -2198,7 +2198,7 @@
 
   <!-- Image -->
   <div style="width:90%;max-width:860px;text-align:center;">
-    <p style="color:#FFD166;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;font-family:'DM Sans',sans-serif;">Orphanage Visit — Hope at Last Orphanage Home</p>
+    <p id="sgLabel" style="color:#FFD166;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;font-family:'DM Sans',sans-serif;">Orphanage Visit — Hope at Last Orphanage Home</p>
     <img id="sgImage" src="" style="max-width:100%;max-height:75vh;object-fit:contain;border-radius:10px;">
   </div>
 
@@ -2550,6 +2550,7 @@ let activeVideoGallery = 'orphan';
 function openVideoGallery(startIndex = 0) {
   activeVideoGallery = 'orphan';
   vgIndex = startIndex;
+  document.getElementById('vgLabel').textContent = 'Orphanage Visit — Hope at Last Orphanage Home';
   vgShow();
   document.getElementById('videoGalleryModal').style.display = 'flex';
 }
@@ -2557,6 +2558,7 @@ function openVideoGallery(startIndex = 0) {
 function openShoeDriveVideoGallery(startIndex = 0) {
   activeVideoGallery = 'shoes';
   vgIndex = startIndex;
+  document.getElementById('vgLabel').textContent = 'Shoe Drive — Ijaiye Ojokoro Senior College';
   vgShow();
   document.getElementById('videoGalleryModal').style.display = 'flex';
 }
@@ -2589,6 +2591,7 @@ function vgShow() {
   function openScrollGallery(startIndex = 0) {
   activeGallery = 'orphan';
   sgIndex = startIndex;
+  document.getElementById('sgLabel').textContent = 'Orphanage Visit — Hope at Last Orphanage Home';
   sgShow();
   const modal = document.getElementById('scrollGalleryModal');
   modal.style.display = 'flex';
@@ -2597,6 +2600,7 @@ function vgShow() {
 function openShoeDriveGallery(startIndex = 0) {
   activeGallery = 'shoes';
   sgIndex = startIndex;
+  document.getElementById('sgLabel').textContent = 'Shoe Drive — Ijaiye Ojokoro Senior College';
   sgShow();
   const modal = document.getElementById('scrollGalleryModal');
   modal.style.display = 'flex';
