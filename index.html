@@ -1890,9 +1890,7 @@
     <div class="media-filter">
       <button class="filter-btn active" onclick="filterMedia('all', this)">All</button>
       <button class="filter-btn" onclick="filterMedia('orphan', this)">Orphan Care</button>
-      <!-- Shoe Drives filter — uncomment when shoe drive events occur
       <button class="filter-btn" onclick="filterMedia('shoes', this)">Shoe Drives</button>
-      -->
       <!-- Community Feeding filter — uncomment when feeding events occur
       <button class="filter-btn" onclick="filterMedia('food', this)">Community Feeding</button>
       -->
@@ -1940,30 +1938,22 @@
   <button onclick="vgStep(1)" style="position:fixed;right:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:22px;z-index:1002;">›</button>
 </div>
 
-  <!-- Shoe Drive Upcoming Photos -->
-  <div class="media-item" data-cat="shoes" style="aspect-ratio:4/3;">
-    <div class="media-placeholder" style="background:linear-gradient(135deg,#2a1a10,#6b3a2e);width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
-      <div class="ph-icon">👟</div>
-      <p class="ph-label">Shoe Drive — Upcoming</p>
-      <p class="ph-sub">Photos will appear here after the event</p>
-    </div>
+  <!-- Shoe Drive Photos -->
+  <div class="media-item" data-cat="shoes" onclick="openShoeDriveGallery()" style="aspect-ratio:4/3;">
+    <img src="assets/media/shoe-drive-01.jpg" alt="Shoe Drive" style="width:100%;height:100%;object-fit:cover;">
     <div class="media-overlay">
       <span class="mo-tag">Shoe Drive</span>
-      <span class="mo-title">Shoe Drive — Upcoming</span>
+      <span class="mo-title">Shoe Drive — Photos</span>
     </div>
   </div>
 
-  <!-- Shoe Drive Upcoming Videos -->
-  <div class="media-item" data-cat="shoes" style="aspect-ratio:4/3;">
-    <div class="media-placeholder" style="background:linear-gradient(135deg,#1a2a10,#3a6b2e);width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
-      <div class="ph-icon">🎥</div>
-      <p class="ph-label">Shoe Drive — Upcoming</p>
-      <p class="ph-sub">Videos will appear here after the event</p>
-    </div>
+  <!-- Shoe Drive Video -->
+  <div class="media-item" data-cat="shoes" onclick="openVideoGallery(1)" style="aspect-ratio:4/3;cursor:pointer;">
+    <img src="assets/media/shoe-drive-01.jpg" alt="Shoe Drive Video" style="width:100%;height:100%;object-fit:cover;">
     <div class="video-badge">▶ Video</div>
     <div class="media-overlay">
       <span class="mo-tag">Shoe Drive</span>
-      <span class="mo-title">Shoe Drive — Upcoming</span>
+      <span class="mo-title">Shoe Drive — Video</span>
     </div>
   </div>
 
@@ -2550,8 +2540,7 @@
 
 const vgVideos = [
   { src: 'assets/media/orphanage-video-01.mp4', poster: 'assets/media/orphanage-01.jpg' },
-  // { src: 'assets/media/orphanage-video-02.mp4', poster: 'assets/media/orphanage-02.jpg' },
-  // { src: 'assets/media/orphanage-video-03.mp4', poster: 'assets/media/orphanage-03.jpg' },
+  { src: 'assets/media/shoe-drive-video-01.mp4', poster: 'assets/media/shoe-drive-01.jpg' },
 ];
 let vgIndex = 0;
 
@@ -2585,6 +2574,15 @@ function vgShow() {
 }
 
   function openScrollGallery(startIndex = 0) {
+  activeGallery = 'orphan';
+  sgIndex = startIndex;
+  sgShow();
+  const modal = document.getElementById('scrollGalleryModal');
+  modal.style.display = 'flex';
+}
+
+function openShoeDriveGallery(startIndex = 0) {
+  activeGallery = 'shoes';
   sgIndex = startIndex;
   sgShow();
   const modal = document.getElementById('scrollGalleryModal');
@@ -2596,13 +2594,15 @@ function closeScrollGallery() {
 }
 
 function sgStep(dir) {
-  sgIndex = (sgIndex + dir + sgImages.length) % sgImages.length;
+  const imgs = activeGallery === 'shoes' ? sdImages : sgImages;
+  sgIndex = (sgIndex + dir + imgs.length) % imgs.length;
   sgShow();
 }
 
 function sgShow() {
-  document.getElementById('sgImage').src = sgImages[sgIndex];
-  document.getElementById('sgCounter').textContent = `${sgIndex + 1} / ${sgImages.length}`;
+  const imgs = activeGallery === 'shoes' ? sdImages : sgImages;
+  document.getElementById('sgImage').src = imgs[sgIndex];
+  document.getElementById('sgCounter').textContent = `${sgIndex + 1} / ${imgs.length}`;
 }
 
 const galleryImages = [
@@ -2630,7 +2630,22 @@ const sgImages = [
   'assets/media/orphanage-09.jpg',
   'assets/media/orphanage-10.jpg',
 ];
+const sdImages = [
+  'assets/media/shoe-drive-01.jpg',
+  'assets/media/shoe-drive-02.jpg',
+  'assets/media/shoe-drive-03.jpg',
+  'assets/media/shoe-drive-04.jpg',
+  'assets/media/shoe-drive-05.jpg',
+  'assets/media/shoe-drive-06.jpg',
+  'assets/media/shoe-drive-07.jpg',
+  'assets/media/shoe-drive-08.jpg',
+  'assets/media/shoe-drive-09.jpg',
+  'assets/media/shoe-drive-10.jpg',
+  'assets/media/shoe-drive-11.jpg',
+  'assets/media/shoe-drive-12.jpg',
+];
 let sgIndex = 0;
+let activeGallery = 'orphan';
 let currentGalleryIndex = 0;
 
 function openGallery(index) {
