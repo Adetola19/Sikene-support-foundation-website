@@ -1948,7 +1948,7 @@
   </div>
 
   <!-- Shoe Drive Video -->
-  <div class="media-item" data-cat="shoes" onclick="openVideoGallery(1)" style="aspect-ratio:4/3;cursor:pointer;">
+  <div class="media-item" data-cat="shoes" onclick="openShoeDriveVideoGallery()" style="aspect-ratio:4/3;cursor:pointer;">
     <img src="assets/media/shoe-drive-01.jpg" alt="Shoe Drive Video" style="width:100%;height:100%;object-fit:cover;">
     <div class="video-badge">▶ Video</div>
     <div class="media-overlay">
@@ -2540,11 +2540,22 @@
 
 const vgVideos = [
   { src: 'assets/media/orphanage-video-01.mp4', poster: 'assets/media/orphanage-01.jpg' },
-  { src: 'assets/media/shoe-drive-video-01.mp4', poster: 'assets/media/shoe-drive-01.jpg' },
+];
+const sdvVideos = [
+  { src: 'assets/media/shoe-drive-video-01.mp4', poster: 'assets/media/shoe-drive-12.jpg' },
 ];
 let vgIndex = 0;
+let activeVideoGallery = 'orphan';
 
 function openVideoGallery(startIndex = 0) {
+  activeVideoGallery = 'orphan';
+  vgIndex = startIndex;
+  vgShow();
+  document.getElementById('videoGalleryModal').style.display = 'flex';
+}
+
+function openShoeDriveVideoGallery(startIndex = 0) {
+  activeVideoGallery = 'shoes';
   vgIndex = startIndex;
   vgShow();
   document.getElementById('videoGalleryModal').style.display = 'flex';
@@ -2560,17 +2571,19 @@ function closeVideoGallery() {
 function vgStep(dir) {
   const video = document.getElementById('vgVideo');
   video.pause();
-  vgIndex = (vgIndex + dir + vgVideos.length) % vgVideos.length;
+  const videos = activeVideoGallery === 'shoes' ? sdvVideos : vgVideos;
+  vgIndex = (vgIndex + dir + videos.length) % videos.length;
   vgShow();
 }
 
 function vgShow() {
+  const videos = activeVideoGallery === 'shoes' ? sdvVideos : vgVideos;
   const video = document.getElementById('vgVideo');
-  const current = vgVideos[vgIndex];
+  const current = videos[vgIndex];
   video.src = current.src;
   video.poster = current.poster;
   video.load();
-  document.getElementById('vgCounter').textContent = `${vgIndex + 1} / ${vgVideos.length}`;
+  document.getElementById('vgCounter').textContent = `${vgIndex + 1} / ${videos.length}`;
 }
 
   function openScrollGallery(startIndex = 0) {
@@ -2631,18 +2644,18 @@ const sgImages = [
   'assets/media/orphanage-10.jpg',
 ];
 const sdImages = [
-  'assets/media/shoe-drive-01.jpg',
-  'assets/media/shoe-drive-02.jpg',
-  'assets/media/shoe-drive-03.jpg',
-  'assets/media/shoe-drive-04.jpg',
-  'assets/media/shoe-drive-05.jpg',
-  'assets/media/shoe-drive-06.jpg',
-  'assets/media/shoe-drive-07.jpg',
-  'assets/media/shoe-drive-08.jpg',
-  'assets/media/shoe-drive-09.jpg',
-  'assets/media/shoe-drive-10.jpg',
-  'assets/media/shoe-drive-11.jpg',
   'assets/media/shoe-drive-12.jpg',
+  'assets/media/shoe-drive-11.jpg',
+  'assets/media/shoe-drive-10.jpg',
+  'assets/media/shoe-drive-09.jpg',
+  'assets/media/shoe-drive-08.jpg',
+  'assets/media/shoe-drive-07.jpg',
+  'assets/media/shoe-drive-06.jpg',
+  'assets/media/shoe-drive-05.jpg',
+  'assets/media/shoe-drive-04.jpg',
+  'assets/media/shoe-drive-03.jpg',
+  'assets/media/shoe-drive-02.jpg',
+  'assets/media/shoe-drive-01.jpg',
 ];
 let sgIndex = 0;
 let activeGallery = 'orphan';
