@@ -2754,38 +2754,39 @@ document.addEventListener('keydown', function(e) {
       label: 'Sikene Support Foundation — Financial Statement, Q2 2026',
       rows: [
         { type: 'section', label: 'Income' },
-        { label: 'Individual donations', budget: 0, actual: 656070 },
+        { label: 'Individual donations', budget: 0, actual: 847410 },
         { label: 'Corporate sponsorships', budget: 0, actual: 0 },
         { label: 'Fundraising events', budget: 0, actual: 0 },
         { label: 'Grants received', budget: 0, actual: 0 },
-        { type: 'total', label: 'Total Income', budget: 0, actual: 656070 },
+        { type: 'total', label: 'Total Income', budget: 0, actual: 847410 },
         { type: 'section', label: 'Expenditure' },
-        { label: 'Orphan Care (supplies & visits)', budget: 0, actual: 150000 },
+        { label: 'Orphan Care (supplies & visits)', budget: 150000, actual: 177290 },
         { label: 'Shoe Drive (purchase & logistics)', budget: 0, actual: 0 },
         { label: 'Community Feeding', budget: 0, actual: 0 },
-        { label: 'Administrative costs', budget: 0, actual: 27290 },
-        { label: 'Communications & marketing', budget: 0, actual: 9410 },
-        { type: 'total', label: 'Total Expenditure', budget: 0, actual: 186700 },
-        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: 0 },
+        { label: 'Administrative costs', budget: 0, actual: 9600 },
+        { label: 'Communications & marketing', budget: 0, actual: 0 },
+        { type: 'total', label: 'Total Expenditure', budget: 0, actual: 186890 },
+        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: 660520 },
       ]
     },
     q3: {
       label: 'Sikene Support Foundation — Financial Statement, Q3 2026',
       rows: [
         { type: 'section', label: 'Income' },
-        { label: 'Individual donations', budget: 0, actual: 0 },
+        { label: 'Individual donations', budget: 0, actual: 1230500 },
         { label: 'Corporate sponsorships', budget: 0, actual: 0 },
         { label: 'Fundraising events', budget: 0, actual: 0 },
         { label: 'Grants received', budget: 0, actual: 0 },
-        { type: 'total', label: 'Total Income', budget: 0, actual: 0 },
+        { type: 'total', label: 'Total Income', budget: 0, actual: 1230500 },
         { type: 'section', label: 'Expenditure' },
         { label: 'Orphan Care (supplies & visits)', budget: 0, actual: 0 },
-        { label: 'Shoe Drive (purchase & logistics)', budget: 0, actual: 0 },
+        { label: 'Shoe Drive (purchase & logistics)', budget: 1600000, actual: 1094730 },
         { label: 'Community Feeding', budget: 0, actual: 0 },
-        { label: 'Administrative costs', budget: 0, actual: 0 },
-        { label: 'Communications & marketing', budget: 0, actual: 0 },
-        { type: 'total', label: 'Total Expenditure', budget: 0, actual: 0 },
-        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: 0 },
+        { label: 'Administrative costs', budget: 0, actual: 2600 },
+        { label: 'Operational costs', budget: 45000, actual: 45000 },
+        { label: 'Communications & marketing', budget: 200000, actual: 200000 },
+        { type: 'total', label: 'Total Expenditure', budget: 0, actual: 1342330 },
+        { type: 'surplus', label: 'Surplus / (Deficit)', budget: 0, actual: -111830 },
       ]
     },
     q4: {
@@ -2815,8 +2816,8 @@ document.addEventListener('keydown', function(e) {
   }
 
   function variance(budget, actual) {
-    if (actual === 0) return '—';
-    const v = actual - budget;
+    if (budget === 0 || actual === budget) return '—';
+    const v = budget - actual;
     const cls = v >= 0 ? 'amount-positive' : 'amount-negative';
     const sign = v >= 0 ? '+' : '';
     return '<span class="' + cls + '">' + sign + v.toLocaleString('en-NG') + '</span>';
